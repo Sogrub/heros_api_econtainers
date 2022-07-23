@@ -1,0 +1,29 @@
+<div class="mb-3 box1">
+  <input
+    (keyup)="buscar()"
+    type="text"
+    class="form-control myinput"
+    id="exampleFormControlInput1"
+    placeholder="Buscar Personaje"
+    [(ngModel)]="serch"
+  />
+</div>
+<div class="container text-center">
+  <div class="row grid text-center">
+    <div class="col" *ngFor="let item of heroes20">
+      <div class="card" style="width: 18rem">
+        <img src="{{ item.images.lg }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">
+            inteligencia: {{ item.powerstats.intelligence }}<br />
+            Fuerza: {{ item.powerstats.strength }}<br />
+            Velocidad: {{ item.powerstats.speed }}<br />
+            Durabilidad: {{ item.powerstats.durability }}<br />
+          </p>
+          <a class="btn btn-primary" (click)="goHero(item.id)">Detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
